@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Harvest Asset Management | Reports</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Icon -->
+    <link href="/assets/images/favicon.ico" rel="shortcut icon">
+    <!-- StyleSheets -->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <link rel="stylesheet" href="/assets/CSS/test.css">
+    <!-- JavaScript -->
+    <script type="text/javascript" src="/assets/javascripts/jquery-1.11.3.min.js"></script>
+ 
+    <!--[if lte IE 6]>
+        <script type="text/javascript">
+            window.location.href='/not-supported';
+        </script>
+    <![endif]-->
+
+
+</head>
+<body>
+    <div id="container">
+			<div class="pure-heading">
+				<h2>Harvest</h2>
+				<h2>Asset</h2>
+				<h2>Management</h2>
+			</div>
+		
+			<div id="description">
+				<h2> A Value Investor</h2>
+			</div>
+		</div>
+		
+		<div class="pure-g">
+    		<a href="/home"><div class="pure-u-1-5"><p>HOME</p></div></a>
+    		<a href="/about"><div class="pure-u-1-5"><p>ABOUT</p></div></a>
+    		<a href="/invest"><div class="pure-u-1-5"><p>INVESTMENT PHILOSOPHY</p></div></a>
+			<a href="/reports">
+                <div class="pure-u-1-5" id="reports">
+                    <p>REPORTS</p>
+                    <div class="dropdown-content">
+                        <%files.forEach(function( file ){%>
+                        <a href="#"><div class="years"><%= file %></div></a>
+                        <% }); %>
+                    </div>
+                </div>
+            </a>
+    		<a href="/contacts"><div class="pure-u-1-5"><p>CONTACTS</p></div></a>
+		</div>
+        <div class="content">
+          <%folders.forEach(function( folder ){%>
+            <div id="report_yr">
+              <h2 class="content-subhead"><%= files[folders.indexOf(folder)] %></h2>
+            </div>
+            <%folder.forEach(function( file ){%>
+              <div id="report">
+                <h2><a href="/reports/<%= files[folders.indexOf(folder)] %>/<%= file %>"><%= file %></a></h2>
+              </div>
+              <% }); %>
+          <% }); %>
+        </div>
+    <script src="/assets/javascripts/ui.js"></script>
+    <script type="text/javascript" src="/assets/javascripts/site.js"></script>
+
+</body>
+</html>

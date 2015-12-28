@@ -1,0 +1,94 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300,200);
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+
+.pure-heading{
+	order: 1;
+	padding: 5px;
+	background-color: #0000A0;
+	color: #ffffff;
+	width:200px;
+    float:left;
+	line-height:30px;
+}
+
+.pure-heading h2{
+	font-family: 'Raleway', serif;
+	font-weight: 400;
+}
+
+.pure-u-1-5{
+	background-color: #D1D0CE;
+	text-align: center;
+	transition: background-color 0.5s ease;
+}
+.pure-u-1-5:hover{
+	background-color: #2B3856;
+	color: #D1D0CE;
+}
+
+a:visited{
+	color: #2B3856;
+}
+
+.pure-u-1-5 p{
+	font-family: 'Raleway', serif;
+	font-weight: 400;
+	transition: background-color 0.2s ease;
+}
+
+#container{
+	display: flex;
+}
+
+#description{
+	order: 2;
+	padding: 20px;
+	font-family: 'Poiret One', cursive;
+	font-weight: 400;
+}
+
+#description h2{
+	color: #B6B6B4;
+}
+
+#reports{
+	position: relative;
+}
+#reports:hover p{
+	background-color: #2B3856;
+	color: #D1D0CE;
+}
+
+#reports:hover .dropdown-content{
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  z-index: 100;
+}
+
+.dropdown-content{
+	padding: 5px;
+	position: absolute;
+	display: none;
+  	opacity: 0;
+  	visibility: hidden;
+  	-webkit-transiton: opacity 0.5s;
+  	-moz-transition: opacity 0.5s;
+  	-ms-transition: opacity 0.5s;
+  	-o-transition: opacity 0.5s;
+  	transition: opacity 0.5s ease;
+}
+
+.dropdown-content .years{
+	padding: 10px;
+	display: block; 
+	width: 300px;
+	color: #E5E4E2;
+	background-color: #2B3856;
+	transition: background-color 0.5s ease;
+}
+
+.dropdown-content .years:hover{
+	color: #2B3856;
+	background-color: #E5E4E2;
+}

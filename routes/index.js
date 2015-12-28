@@ -64,6 +64,12 @@ router.get('/reports/*',function(req,res){
   });
 });
 
+router.get('/r/*', function(req, res){
+  //render the report page for a specific year
+  var year = req.params[0];
+  
+});
+
 router.get('/invest',function(req, res){
   fs.readdir('./Files', function(err, files){
     if (err) {

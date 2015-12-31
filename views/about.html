@@ -34,20 +34,22 @@
 		</div>
 		
 		<div class="pure-g">
-    		<a href="/home"><div class="pure-u-1-5"><p>HOME</p></div></a>
-    		<a href="/about"><div class="pure-u-1-5"><p>ABOUT</p></div></a>
-    		<a href="/invest"><div class="pure-u-1-5"><p>INVESTMENT PHILOSOPHY</p></div></a>
-			<a href="/reports">
+    		<div class="pure-u-1-5"><p><a href="/home">HOME</a></p></div>
+    		<div class="pure-u-1-5"><p><a href="/about">ABOUT</a></p></div>
+    		<div class="pure-u-1-5"><p><a href="/invest">INVESTMENT PHILOSOPHY</a></p></div>
+			
                 <div class="pure-u-1-5" id="reports">
-                    <p>REPORTS</p>
+                    
+                    <p><a href="/reports">REPORTS</a></p>
+                    
                     <div class="dropdown-content">
                         <%files.forEach(function( file ){%>
-                        <a href="#"><div class="years"><%= file %></div></a>
+                        <a href="/reports/<%= file %>"><div class="years"><%= file %></div></a>
                         <% }); %>
                     </div>
                 </div>
-            </a>
-    		<a href="/contacts"><div class="pure-u-1-5"><p>CONTACTS</p></div></a>
+            
+    		<div class="pure-u-1-5"><p><a href="/contacts">CONTACTS</a></p></div>
 		</div>
         
         <div class="content">

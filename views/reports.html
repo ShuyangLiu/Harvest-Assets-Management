@@ -35,32 +35,42 @@
 		</div>
 		
 		<div class="pure-g">
-    		<a href="/home"><div class="pure-u-1-5"><p>HOME</p></div></a>
-    		<a href="/about"><div class="pure-u-1-5"><p>ABOUT</p></div></a>
-    		<a href="/invest"><div class="pure-u-1-5"><p>INVESTMENT PHILOSOPHY</p></div></a>
-			<a href="/reports">
+    		<div class="pure-u-1-5"><p><a href="/home">HOME</a></p></div>
+    		<div class="pure-u-1-5"><p><a href="/about">ABOUT</a></p></div>
+    		<div class="pure-u-1-5"><p><a href="/invest">INVESTMENT PHILOSOPHY</a></p></div>
+			
                 <div class="pure-u-1-5" id="reports">
-                    <p>REPORTS</p>
+                    
+                    <p><a href="/reports">REPORTS</a></p>
+                    
                     <div class="dropdown-content">
                         <%files.forEach(function( file ){%>
-                        <a href="/r/<%= file %>"><div class="years"><%= file %></div></a>
+                        <a href="/reports/<%= file %>"><div class="years"><%= file %></div></a>
                         <% }); %>
                     </div>
                 </div>
-            </a>
-    		<a href="/contacts"><div class="pure-u-1-5"><p>CONTACTS</p></div></a>
+            
+    		<div class="pure-u-1-5"><p><a href="/contacts">CONTACTS</a></p></div>
 		</div>
         <div class="content">
+            <table class="pure-table pure-table-horizontal">
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Mid-Year</th>
+                        <th>Annual</th>
+                    </tr>
+                </thead>
           <%folders.forEach(function( folder ){%>
-            <div id="report_yr">
-              <h2 class="content-subhead"><%= files[folders.indexOf(folder)] %></h2>
-            </div>
-            <%folder.forEach(function( file ){%>
-              <div id="report">
-                <h2><a href="/reports/<%= files[folders.indexOf(folder)] %>/<%= file %>"><%= file %></a></h2>
-              </div>
-              <% }); %>
+                <tbody>
+                    <tr>
+                       <td><%= files[folders.indexOf(folder)] %></td>
+                       <td><a href="/reports/<%= files[folders.indexOf(folder)] %>/<%= folder[0] %>"><%= folder[0] %></a></td>
+                       <td><a href="/reports/<%= files[folders.indexOf(folder)] %>/<%= folder[1] %>"><%= folder[1] %></a></td>
+                    </tr>
+                </tbody>
           <% }); %>
+            </table>
         </div>
     <script src="/assets/javascripts/ui.js"></script>
     <script type="text/javascript" src="/assets/javascripts/site.js"></script>

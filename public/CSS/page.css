@@ -26,6 +26,7 @@
 .pure-u-1-5:hover{
 	background-color: #2B3856;
 	color: #D1D0CE;
+	cursor: pointer;
 }
 .pure-u-1-5:hover p a{
 	background-color: #2B3856;

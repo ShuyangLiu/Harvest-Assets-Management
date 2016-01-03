@@ -2,10 +2,10 @@
   "name": "Harvest-Asset-Management",
   "version": "0.0.0",
   "author": "Shuyang Liu",
-  "repository" :{
-        "type" : "git",
-        "url" : "https://github.com/ShuyangLiu/Harvest-Asset-Management.git"
-    },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ShuyangLiu/Harvest-Asset-Management.git"
+  },
   "dependencies": {
     "body-parser": "~1.13.2",
     "cookie-parser": "~1.3.5",
@@ -14,6 +14,7 @@
     "express": "~4.13.1",
     "express-session": "1.12.1",
     "firebase": "^2.3.2",
+    "http-auth": "^2.2.8",
     "jade": "~1.11.0",
     "md5": "2.0.0",
     "method-override": "2.3.5",

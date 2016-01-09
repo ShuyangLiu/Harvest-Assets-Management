@@ -110,3 +110,29 @@ table{
     margin-right:auto;
 	margin-top: 20px;
 }
+
+.language{
+	position: fixed;
+    top: 0;
+    right: 0;
+    width: 100px;
+	padding: 5px;
+	background-color: #2B3856;
+	cursor: pointer;
+	transition: background-color 0.5s ease;
+}
+
+.language a{
+	text-align: center;
+	text-decoration: none;
+	color: #E5E4E2;
+	transition: background-color 0.5s ease;
+}
+
+.language:hover{
+	background-color: #E5E4E2;
+}
+
+.language:hover a{
+	color: #2B3856;
+}

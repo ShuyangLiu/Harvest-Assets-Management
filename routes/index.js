@@ -159,5 +159,126 @@ router.get('/test',function(req, res){
   res.render('test.html');
 });
 
+//Chinese version
+router.get('/CH/agreement', function(req, res){
+  var sess = req.session;
+  if(!sess.agreement){
+     res.render('Chinese/agreement.html');
+  }
+  else{
+    res.redirect('/CH/home');
+  }
+});
+
+router.get('/CH/home',function(req,res){
+  var sess = req.session;
+  if(sess.agreement){
+      fs.readdir('./Files', function(err, files){
+      if (err) {
+        throw err;
+      }
+      res.render('Chinese/home.html',
+      {'files' : files});
+    });
+  }
+  else{
+    res.redirect('/CH/agreement');
+  }
+});
+
+router.get('/CH/about',function(req, res){
+  var sess = req.session;
+  if(sess.agreement){
+  fs.readdir('./Files', function(err, files){
+    if (err) {
+      throw err;
+    }
+    res.render('Chinese/about.html',
+    {'files' : files});
+  });
+}
+else{
+  res.redirect('/CH/agreement');
+}
+});
+
+router.get('/CH/invest',function(req, res){
+  var sess = req.session;
+  if(sess.agreement){
+  fs.readdir('./Files', function(err, files){
+    if (err) {
+      throw err;
+    }
+    res.render('Chinese/invest.html',
+    {'files' : files});
+  });
+  }
+  else{
+    res.redirect('/CH/agreement');
+  }
+});
+
+
+router.get('/CH/contacts',function(req, res){
+  var sess = req.session;
+  if(sess.agreement){
+  fs.readdir('./Files', function(err, files){
+    if (err) {
+      throw err;
+    }
+    res.render('Chinese/contacts.html',
+    {'files' : files});
+  });
+}
+  else{
+    res.redirect('/CH/agreement');
+  }
+});
+
+router.get('/CH/reports', function(req, res){
+  var sess = req.session;
+  if(sess.agreement){
+  fs.readdir('./Files', function(err, files){
+    if (err) {
+      throw err;
+    }
+    var folders = [];
+    for (var i = 0; i < files.length; i++)
+    {
+      var folder = fs.readdirSync('./Files/'+files[i]);
+      folders.push(folder);
+    }
+
+    res.render('Chinese/reports.html',
+    {'files' : files,
+     'folders': folders});
+  });
+  }
+  else{
+    res.redirect('/CH/agreement');
+  }
+});
+
+router.get('/CH/reports/*',function(req,res){
+  var sess = req.session;
+  if(sess.agreement){
+  var year = req.params[0];
+  fs.readdir('./Files', function(err, files){
+    if (err) {
+      throw err;
+    }
+    //files in the specific folder
+    var file = fs.readdirSync('./Files/'+year);
+    res.render('Chinese/year.html',
+    {'files' : files,
+      'year' : year,
+      'file': file});
+  });
+  }
+  else{
+    res.redirect('/CH/agreement');
+  }
+});
+
 
 module.exports = router;

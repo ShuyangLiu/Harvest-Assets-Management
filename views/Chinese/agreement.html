@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <title>Harvest Asset Management | About</title>
+    <title>Harvest Asset Management | Home</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Icon -->
@@ -32,37 +32,36 @@
 				<h2> A Value Investor</h2>
 			</div>
 		</div>
-		
-		<div class="pure-g">
-    		<div class="pure-u-1-5"><p><a href="/home">HOME</a></p></div>
-    		<div class="pure-u-1-5"><p><a href="/about">ABOUT</a></p></div>
-    		<div class="pure-u-1-5"><p><a href="/invest">INVESTMENT PHILOSOPHY</a></p></div>
-			
-                <div class="pure-u-1-5" id="reports">
-                    
-                    <p><a href="/reports">REPORTS</a></p>
-                    
-                    <div class="dropdown-content">
-                        <%files.forEach(function( file ){%>
-                        <a href="/reports/<%= file %>"><div class="years"><%= file %></div></a>
-                        <% }); %>
-                    </div>
-                </div>
-            
-    		<div class="pure-u-1-5"><p><a href="/contacts">CONTACTS</a></p></div>
-		</div>
         
         <div class="content">
-            <h2>About</h2>
+            <h2>协议与条款</h2>
             <p>Some Content here</p>
+            <div class="pure-u-1-5" onclick="agree_action()">同意</div>
         </div>
         
         <div class="language">
-            <a href="/CH/about"><div>中文</div></a>
+            <a href="/agreement"><div>English</div></a>
         </div>
-        
+
     <script type="text/javascript" src="/assets/javascripts/site.js"></script>
-
-
+    <script type="text/javascript">
+        function agree_action() {
+            $.ajax({
+                type: 'POST',
+                url: '/agree.action',
+                data: {'agree':true},
+                dataType: 'JSON',
+                success: function(result){
+                    return processResult(result);
+                }
+            });
+        }
+    </script>
+    <script type="text/javascript">
+        function processResult(result){
+            var forwardUrl = '/CH/home';
+            window.location.href = forwardUrl;
+        }
+    </script>
 </body>
 </html>
